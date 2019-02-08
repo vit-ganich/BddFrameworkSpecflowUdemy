@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{25A9A5BB-E83A-476D-8081-50CC2F4E2D77}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BddFrameworkSpecflowUdemy</RootNamespace>
+    <AssemblyName>BddFrameworkSpecflowUdemy</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="AllTests\BrowserActions\TestBrowserActions.cs" />
+    <Compile Include="AllTests\Button\HandleButton.cs" />
+    <Compile Include="AllTests\CheckBox\TestCheckBox.cs" />
+    <Compile Include="AllTests\DefaultWait\HandleDefaultWait.cs" />
+    <Compile Include="AllTests\DropDownList\DropDownList.cs" />
+    <Compile Include="AllTests\FindElements\HandleElements.cs" />
+    <Compile Include="AllTests\HyperLink\TestHyperLink.cs" />
+    <Compile Include="AllTests\MultipleBrowser\TestMultipleBrowserWindow.cs" />
+    <Compile Include="AllTests\PageNavigation\TestPageNavigation.cs" />
+    <Compile Include="AllTests\Popups\TestPopups.cs" />
+    <Compile Include="AllTests\RadioButton\HandleRadioButton.cs" />
+    <Compile Include="AllTests\ScreenShots\TakeScreenShots.cs" />
+    <Compile Include="AllTests\TextBox\TestTextBox.cs" />
+    <Compile Include="AllTests\WebDriverWait\TestWebDriverWait.cs" />
+    <Compile Include="AllTests\WebElement\TestWebElement.cs" />
+    <Compile Include="BaseClass\BaseClass.cs" />
+    <Compile Include="ComponentHelper\BrowserHelper.cs" />
+    <Compile Include="ComponentHelper\ButtonHelper.cs" />
+    <Compile Include="ComponentHelper\CheckBoxHelper.cs" />
+    <Compile Include="ComponentHelper\DropDownHelper.cs" />
+    <Compile Include="ComponentHelper\GenericHelper.cs" />
+    <Compile Include="ComponentHelper\LinkHelper.cs" />
+    <Compile Include="ComponentHelper\NavigationHelper.cs" />
+    <Compile Include="ComponentHelper\RadioButtonHelper.cs" />
+    <Compile Include="ComponentHelper\ScreenShotHelper.cs" />
+    <Compile Include="ComponentHelper\TextBoxHelper.cs" />
+    <Compile Include="ComponentHelper\WindowHelper.cs" />
+    <Compile Include="Configuration\XmlReader.cs" />
+    <Compile Include="CustomException\NoSuitableDriverFound.cs" />
+    <Compile Include="Settings\AppConfigKeys.cs" />
+    <Compile Include="Configuration\AppConfigReader.cs" />
+    <Compile Include="Configuration\BrowserType.cs" />
+    <Compile Include="Interfaces\IConfig.cs" />
+    <Compile Include="Settings\ObjectRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExcelReader\" />
+    <Folder Include="PageObject\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages\PhantomJS.2.1.1\tools\phantomjs\phantomjs.exe" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Selenium.WebDriver.IEDriver.3.141.5\build\Selenium.WebDriver.IEDriver.targets" Condition="Exists('packages\Selenium.WebDriver.IEDriver.3.141.5\build\Selenium.WebDriver.IEDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Selenium.WebDriver.IEDriver.3.141.5\build\Selenium.WebDriver.IEDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.WebDriver.IEDriver.3.141.5\build\Selenium.WebDriver.IEDriver.targets'))" />
+    <Error Condition="!Exists('packages\Selenium.WebDriver.ChromeDriver.2.45.0\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.WebDriver.ChromeDriver.2.45.0\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+  </Target>
+  <Import Project="packages\Selenium.WebDriver.ChromeDriver.2.45.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('packages\Selenium.WebDriver.ChromeDriver.2.45.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
