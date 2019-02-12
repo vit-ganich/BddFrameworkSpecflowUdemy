@@ -62,6 +62,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AllTests\Autosuggest\TestAutosuggest.cs" />
     <Compile Include="AllTests\BrowserActions\TestBrowserActions.cs" />
     <Compile Include="AllTests\Button\HandleButton.cs" />
     <Compile Include="AllTests\CheckBox\TestCheckBox.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="AllTests\DropDownList\DropDownList.cs" />
     <Compile Include="AllTests\FindElements\HandleElements.cs" />
     <Compile Include="AllTests\HyperLink\TestHyperLink.cs" />
+    <Compile Include="AllTests\MouseAction\MouseAction.cs" />
     <Compile Include="AllTests\MultipleBrowser\TestMultipleBrowserWindow.cs" />
     <Compile Include="AllTests\PageNavigation\TestPageNavigation.cs" />
     <Compile Include="AllTests\Popups\TestPopups.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="ComponentHelper\CheckBoxHelper.cs" />
     <Compile Include="ComponentHelper\DropDownHelper.cs" />
     <Compile Include="ComponentHelper\GenericHelper.cs" />
+    <Compile Include="ComponentHelper\JSPopupHelper.cs" />
     <Compile Include="ComponentHelper\LinkHelper.cs" />
     <Compile Include="ComponentHelper\NavigationHelper.cs" />
     <Compile Include="ComponentHelper\RadioButtonHelper.cs" />

@@ -62,5 +62,11 @@ namespace BddFrameworkSpecflowUdemy
             }
             ObjectRepository.Driver.SwitchTo().Window(windows[0]);
         }
+
+        public static void SwitchToFrame(By locator)
+        {
+            var element = GenericHelper.GetElement(locator);
+            ObjectRepository.Driver.SwitchTo().Frame(element);
+        }
     }
 }
