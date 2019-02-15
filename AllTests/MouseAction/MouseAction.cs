@@ -59,5 +59,21 @@ namespace BddFrameworkSpecflowUdemy.AllTests.MouseAction
             Thread.Sleep(5000);
 
         }
+
+        [TestMethod]
+        public void TestKeyboardAction()
+        {
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebSiteUrl());
+
+            Actions act = new Actions(ObjectRepository.Driver);
+
+            act.KeyDown(Keys.LeftControl)
+                .SendKeys("t")
+                .KeyUp(Keys.LeftControl)
+                .Build()
+                .Perform();
+
+            Thread.Sleep(5000);
+        }
     }
 }
