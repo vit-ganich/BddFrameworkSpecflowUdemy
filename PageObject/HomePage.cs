@@ -24,7 +24,9 @@ namespace BddFrameworkSpecflowUdemy
         [FindsBy(How = How.ClassName, Using = "login")]
         private IWebElement LogInLink;
 
-        
+        [FindsBy(How = How.XPath, Using = "//*[@title='Contact Us']")]
+        private IWebElement ContactUsLink;
+
         public HomePage(IWebDriver _driver) : base(_driver)
         {
             this.driver = _driver;
@@ -40,6 +42,12 @@ namespace BddFrameworkSpecflowUdemy
         {
             LogInLink.Click();
             return new LoginPage(driver);
+        }
+
+        public ContactUs NavigateToContactUs()
+        {
+            ContactUsLink.Click();
+            return new ContactUs(driver);
         }
 
         #endregion

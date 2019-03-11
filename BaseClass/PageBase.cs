@@ -33,11 +33,5 @@ namespace BddFrameworkSpecflowUdemy
         {
             HomeLink.Click();
         }
-        //public HomePage NavigateToHomePage()
-        //{
-        //    HomeLink.Click();
-        //    return new HomePage(driver);
-        //}
-
     }
 }

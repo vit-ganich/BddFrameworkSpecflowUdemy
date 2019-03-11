@@ -16,20 +16,6 @@ namespace BddFrameworkSpecflowUdemy
         public void TestActions()
         {
             NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebSiteUrl());
-
-            // Without the Helper Methods
-
-            //ObjectRepository.Driver.Manage().Window.Maximize();
-            //GenericHelper.GetElement(By.XPath(("(//a[text()='Dresses'])[2]"))).Click();
-            //System.Threading.Thread.Sleep(2000);
-            //ObjectRepository.Driver.Navigate().Back();
-            //System.Threading.Thread.Sleep(2000);
-            //ObjectRepository.Driver.Navigate().Forward();
-            //System.Threading.Thread.Sleep(2000);
-            //ObjectRepository.Driver.Navigate().Refresh();
-            //System.Threading.Thread.Sleep(5000);
-
-
             GenericHelper.GetElement(By.XPath(("(//a[text()='Dresses'])[2]"))).Click();
             System.Threading.Thread.Sleep(2000);
             BrowserHelper.GoBack();

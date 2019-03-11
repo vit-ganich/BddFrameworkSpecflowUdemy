@@ -35,6 +35,22 @@ namespace BddFrameworkSpecflowUdemy
 
         }
 
+        public static void SelectElement(IWebElement element, string text, bool byValue = false)
+        {
+            select = new SelectElement(element);
+            if (!byValue)
+            {
+                select.SelectByText(text);
+                Console.WriteLine("Selected text : {0}", select.SelectedOption.Text);
+            }
+            else
+            {
+                select.SelectByValue(text);
+                Console.WriteLine("Selected value : {0}", select.SelectedOption.GetAttribute("value"));
+            }
+
+        }
+
         public static IList<string> GetAllItemsText(By locator)
         {
             select = new SelectElement(GenericHelper.GetElement(locator));
