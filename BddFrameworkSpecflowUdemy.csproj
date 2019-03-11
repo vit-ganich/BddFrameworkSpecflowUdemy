@@ -77,6 +77,7 @@
     <Compile Include="AllTests\Popups\TestPopups.cs" />
     <Compile Include="AllTests\RadioButton\HandleRadioButton.cs" />
     <Compile Include="AllTests\ScreenShots\TakeScreenShots.cs" />
+    <Compile Include="AllTests\TestContextClass\TestContextClass.cs" />
     <Compile Include="AllTests\TextBox\TestTextBox.cs" />
     <Compile Include="AllTests\WebDriverWait\TestWebDriverWait.cs" />
     <Compile Include="AllTests\WebElement\TestWebElement.cs" />
