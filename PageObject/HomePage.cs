@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace BddFrameworkSpecflowUdemy
 {
-    public class HomePage
+    public class HomePage : PageBase
     {
+        private IWebDriver driver;
+
         // Note: Page Factory is obsolete
         #region Implementation using Page Factory
 
@@ -23,12 +25,12 @@ namespace BddFrameworkSpecflowUdemy
         private IWebElement LogInLink;
 
         
-        public HomePage()
+        public HomePage(IWebDriver _driver) : base(_driver)
         {
-            PageFactory.InitElements(ObjectRepository.Driver, this);
+            this.driver = _driver;
         }
 
-        public void QuickSearch(string text)
+    public void QuickSearch(string text)
         {
             SearchTextBox.SendKeys(text);
             SubmitSearchButton.Click();
@@ -37,7 +39,7 @@ namespace BddFrameworkSpecflowUdemy
         public LoginPage NavigateToLogin()
         {
             LogInLink.Click();
-            return new LoginPage();
+            return new LoginPage(driver);
         }
 
         #endregion

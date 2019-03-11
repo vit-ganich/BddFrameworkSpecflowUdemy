@@ -81,6 +81,7 @@
     <Compile Include="AllTests\WebDriverWait\TestWebDriverWait.cs" />
     <Compile Include="AllTests\WebElement\TestWebElement.cs" />
     <Compile Include="BaseClass\BaseClass.cs" />
+    <Compile Include="BaseClass\PageBase.cs" />
     <Compile Include="ComponentHelper\BrowserHelper.cs" />
     <Compile Include="ComponentHelper\ButtonHelper.cs" />
     <Compile Include="ComponentHelper\CheckBoxHelper.cs" />

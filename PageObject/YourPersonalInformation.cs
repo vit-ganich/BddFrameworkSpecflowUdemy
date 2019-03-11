@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace BddFrameworkSpecflowUdemy
 {
-    public class YourPersonalInformation
+    public class YourPersonalInformation : PageBase
     {
+        private IWebDriver driver;
 
         // Note: Page Factory is obsolete
         #region Implementation using Page Factory
@@ -18,17 +19,18 @@ namespace BddFrameworkSpecflowUdemy
         private IWebElement BackToYourAccountLink;
 
 
-        public YourPersonalInformation()
+        public YourPersonalInformation(IWebDriver _driver) : base(_driver)
         {
-            PageFactory.InitElements(ObjectRepository.Driver, this);
+            this.driver = _driver;
         }
 
 
         public MyAccount NavigateBackToYourAccount()
         {
             BackToYourAccountLink.Click();
-            return new MyAccount();
+            return new MyAccount(driver);
         }
+
 
         #endregion
 

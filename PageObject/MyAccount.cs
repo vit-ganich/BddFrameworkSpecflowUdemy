@@ -8,13 +8,15 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace BddFrameworkSpecflowUdemy
 {
-    public class MyAccount
+    public class MyAccount : PageBase
     {
+        private IWebDriver driver;
+
         // Note: Page Factory is obsolete
         #region Implementation using Page Factory
 
         [FindsBy(How = How.XPath, Using = "//a[@title='Home']")]
-        private IWebElement HomePageButton;
+        private IWebElement HomePageBottomButton;
 
         [FindsBy(How = How.XPath, Using = "//a[@title='Information']")]
         private IWebElement MyPersonalInfoLink;
@@ -23,15 +25,15 @@ namespace BddFrameworkSpecflowUdemy
         private IWebElement OrderHistoryAndDetailsLink;
 
 
-        public MyAccount()
+        public MyAccount(IWebDriver _driver) : base(_driver)
         {
-            PageFactory.InitElements(ObjectRepository.Driver, this);
+            this.driver = _driver;
         }
 
-        public HomePage NavigateToHome()
+        public HomePage GoToHomeBottom()
         {
-            HomePageButton.Click();
-            return new HomePage();
+            HomePageBottomButton.Click();
+            return new HomePage(driver);
         }
 
         #endregion
@@ -40,7 +42,7 @@ namespace BddFrameworkSpecflowUdemy
         public YourPersonalInformation NavigateToMyPersonalInfo()
         {
             MyPersonalInfoLink.Click();
-            return new YourPersonalInformation();
+            return new YourPersonalInformation(driver);
         }
 
         #region Implementation without Page Factory

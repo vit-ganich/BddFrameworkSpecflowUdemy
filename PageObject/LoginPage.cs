@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace BddFrameworkSpecflowUdemy
 {
-    public class LoginPage
+    public class LoginPage : PageBase
     {
+        private IWebDriver driver;
 
         // Note: Page Factory is obsolete
         #region Implementation using Page Factory
@@ -27,9 +28,9 @@ namespace BddFrameworkSpecflowUdemy
         private IWebElement HomePageLink;
 
 
-        public LoginPage()
+        public LoginPage(IWebDriver _driver) : base(_driver)
         {
-            PageFactory.InitElements(ObjectRepository.Driver, this);
+            this.driver = _driver;
         }
 
 
@@ -38,14 +39,7 @@ namespace BddFrameworkSpecflowUdemy
             LoginTextBox.SendKeys(username);
             PasswordTextBox.SendKeys(password);
             SignInButton.Click();
-            return new MyAccount();
-        }
-
-
-        public HomePage NavigateToHome()
-        {
-            HomePageLink.Click();
-            return new HomePage();
+            return new MyAccount(driver);
         }
 
         #endregion

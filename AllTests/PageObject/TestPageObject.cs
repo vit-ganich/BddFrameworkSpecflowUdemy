@@ -18,7 +18,7 @@ namespace BddFrameworkSpecflowUdemy
 
             NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebSiteUrl());
 
-            HomePage homePage = new HomePage();
+            HomePage homePage = new HomePage(ObjectRepository.Driver);
 
             LoginPage loginPage = homePage.NavigateToLogin();
 
@@ -28,7 +28,8 @@ namespace BddFrameworkSpecflowUdemy
 
             accountPage = myPersonalInfoPage.NavigateBackToYourAccount();
 
-            homePage = accountPage.NavigateToHome();
+            homePage = accountPage.GoToHomeBottom();
+
         }
     }
 }
