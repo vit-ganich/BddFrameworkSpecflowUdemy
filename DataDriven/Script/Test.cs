@@ -10,7 +10,16 @@ namespace BddFrameworkSpecflowUdemy.DataDriven.Script
     [TestClass]
     public class Test
     {
+        private TestContext _testContext;
+
+        public TestContext TestContext
+        {
+            get { return _testContext; }
+            set { _testContext = value; }
+        }
+
         [TestMethod]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", @"E:\Scripts\BddFrameworkSpecflowUdemy\DataDriven\TestData\TestTable.csv", "TestTable#CSV", DataAccessMethod.Sequential)]
         public void TestContactUs()
         {
             NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebSiteUrl());
@@ -19,10 +28,11 @@ namespace BddFrameworkSpecflowUdemy.DataDriven.Script
 
             ContactUs contactUsPage = homePage.NavigateToContactUs();
 
-            contactUsPage.ChooseSubjectHeading("Customer service");
-            contactUsPage.EnterEmailAdress("test@test.test");
-            contactUsPage.EnterOrderReferense("1");
-            contactUsPage.EnterMessage("Test message 1234567890");
+            contactUsPage.ChooseSubjectHeading(TestContext.DataRow["Subject"].ToString());
+            contactUsPage.EnterEmailAddress(TestContext.DataRow["EmailAddress"].ToString());
+            contactUsPage.EnterOrderReferense(TestContext.DataRow["OrderReference"].ToString());
+            contactUsPage.EnterMessage(TestContext.DataRow["Message"].ToString());
+            System.Threading.Thread.Sleep(2000);
             contactUsPage.ClickSendMessage();
         }
     }

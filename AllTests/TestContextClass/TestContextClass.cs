@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BddFrameworkSpecflowUdemy.AllTests.TestContextClass
+namespace BddFrameworkSpecflowUdemy.AllTests
 {
     [TestClass]
     public class TestContextClass

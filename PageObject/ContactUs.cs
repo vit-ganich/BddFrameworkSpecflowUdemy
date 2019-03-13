@@ -43,10 +43,9 @@ namespace BddFrameworkSpecflowUdemy
                 return;
             }
             DropDownHelper.SelectElement(SubjectHeadingDropDown, "Webmaster");
-            
         }
 
-        public void EnterEmailAdress(string emailAddress)
+        public void EnterEmailAddress(string emailAddress)
         {
             EmailAddressTextBox.SendKeys(emailAddress);
         }
@@ -64,7 +63,7 @@ namespace BddFrameworkSpecflowUdemy
         {
             SendButton.Click();
             // Wait for the success message
-            GenericHelper.WaitForWebElementInPage(By.XPath("//*[contains(text(),'successfully sent')]"), timeout: 30);
+            GenericHelper.WaitForWebElementInPage(By.XPath("//*[contains(text(),'successfully sent')]"), timeout: 20);
         }
 
         public new HomePage SignOut()
