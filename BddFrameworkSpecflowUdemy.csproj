@@ -116,6 +116,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="DataDriven\TestData\TestTable.csv" />
+    <None Include="DataDriven\TestData\TestTable.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -57,5 +57,25 @@ namespace BddFrameworkSpecflowUdemy.DataDriven.Script
             contactUsPage.EnterMessage(TestContext.DataRow["Message"].ToString());
             contactUsPage.ClickSendMessage();
         }
+
+        /// <summary>
+        /// Reading data from Excel-file
+        /// </summary>
+        [TestMethod]
+        [DataSource("System.Data.Odbc", @"Dsn=Excel Files;dbq=E:\Scripts\BddFrameworkSpecflowUdemy\DataDriven\TestData\TestTable.xlsx;", "TestExcelData$", DataAccessMethod.Sequential)]
+        public void TestDataDrivenExcel()
+        {
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebSiteUrl());
+
+            HomePage homePage = new HomePage(ObjectRepository.Driver);
+
+            ContactUs contactUsPage = homePage.NavigateToContactUs();
+
+            contactUsPage.ChooseSubjectHeading(TestContext.DataRow["Subject"].ToString());
+            contactUsPage.EnterEmailAddress(TestContext.DataRow["EmailAddress"].ToString());
+            contactUsPage.EnterOrderReferense(TestContext.DataRow["OrderReference"].ToString());
+            contactUsPage.EnterMessage(TestContext.DataRow["Message"].ToString());
+            contactUsPage.ClickSendMessage();
+        }
     }
 }
