@@ -1,4 +1,4 @@
 ﻿,Subject,EmailAddress,OrderReference,Message
-,Customer service,test1@test.test,1,Test message 1
-,Webmaster,test2@test.test,2,Test message 2
-,Xxx,test.test,3,Test message 3
+,Customer service,test1@test.test,1,Test message 1 - CSV
+,Webmaster,test2@test.test,2,Test message 2 - CSV
+,Xxx,test3@test.test,3,Test message 3 - CSV

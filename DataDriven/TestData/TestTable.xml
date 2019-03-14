@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rows>
+  <MessageDetails>
+    <Subject>Customer service</Subject>
+    <EmailAddress>test1@test.test</EmailAddress>
+    <OrderReference>1</OrderReference>
+    <Message>Test message 1 - XML</Message>
+  </MessageDetails>
+  <MessageDetails>
+    <Subject>Webmaster</Subject>
+    <EmailAddress>test2@test.test</EmailAddress>
+    <OrderReference>2</OrderReference>
+    <Message>Test message 2 - XML</Message>
+  </MessageDetails>
+  <MessageDetails>
+    <Subject>Xxx</Subject>
+    <EmailAddress>test3@test.test</EmailAddress>
+    <OrderReference>3</OrderReference>
+    <Message>Test message 3 - XML</Message>
+  </MessageDetails>
+</Rows>
