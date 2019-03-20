@@ -109,7 +109,7 @@
     <Compile Include="CustomException\NoSuitableDriverFound.cs" />
     <Compile Include="DataDriven\Script\Test.cs" />
     <Compile Include="DataDriven\Script\TestExcelData.cs" />
-    <Compile Include="ExcelReader\ExcelReader.cs" />
+    <Compile Include="ExcelReader\ExcelReaderHelper.cs" />
     <Compile Include="PageObject\ContactUs.cs" />
     <Compile Include="PageObject\HomePage.cs" />
     <Compile Include="PageObject\LoginPage.cs" />

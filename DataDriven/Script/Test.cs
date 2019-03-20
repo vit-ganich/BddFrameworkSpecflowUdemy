@@ -77,5 +77,31 @@ namespace BddFrameworkSpecflowUdemy.DataDriven.Script
             contactUsPage.EnterMessage(TestContext.DataRow["Message"].ToString());
             contactUsPage.ClickSendMessage();
         }
+
+        [TestMethod]
+        public void TestDataDrivenExcelReaderHelper()
+        {
+            string excelPath = @"E:\Scripts\BddFrameworkSpecflowUdemy\DataDriven\TestData\TestTable.xlsx";
+            string sheetName = "TestExcelData";
+            // Open the landing page
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebSiteUrl());
+
+            HomePage homePage = new HomePage(ObjectRepository.Driver);
+
+            ContactUs contactUsPage = homePage.NavigateToContactUs();
+
+            //contactUsPage.ChooseSubjectHeading(TestContext.DataRow["Subject"].ToString());
+            //contactUsPage.EnterEmailAddress(TestContext.DataRow["EmailAddress"].ToString());
+            //contactUsPage.EnterOrderReferense(TestContext.DataRow["OrderReference"].ToString());
+            //contactUsPage.EnterMessage(TestContext.DataRow["Message"].ToString());
+
+            contactUsPage.ChooseSubjectHeading(ExcelReaderHelper.GetCellData(excelPath, sheetName, 1, 0).ToString());
+            contactUsPage.EnterEmailAddress(ExcelReaderHelper.GetCellData(excelPath, sheetName, 1, 1).ToString());
+            contactUsPage.EnterOrderReferense(ExcelReaderHelper.GetCellData(excelPath, sheetName, 1, 2).ToString());
+            contactUsPage.EnterMessage(ExcelReaderHelper.GetCellData(excelPath, sheetName, 1, 3).ToString());
+
+            contactUsPage.ClickSendMessage();
+        }
+
     }
 }
