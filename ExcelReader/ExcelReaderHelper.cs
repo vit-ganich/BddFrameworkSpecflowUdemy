@@ -18,9 +18,9 @@ namespace BddFrameworkSpecflowUdemy
             _cache = new Dictionary<string, IExcelDataReader>();
         }
 
-        public static object GetCellData(string excelPath, string sheetName, int row, int column)
+        private static IExcelDataReader GetExcelReader(string excelPath, string sheetName)
         {
-            if (_cache.ContainsKey(sheetName))
+            if(_cache.ContainsKey(sheetName))
             {
                 reader = _cache[sheetName];
             }
@@ -30,8 +30,20 @@ namespace BddFrameworkSpecflowUdemy
                 reader = ExcelReaderFactory.CreateOpenXmlReader(stream);
                 _cache.Add(sheetName, reader);
             }
-            DataTable table = reader.AsDataSet().Tables[sheetName];
+            return reader;
+        }
 
+        public static int GetTotalRows(string excelPath, string sheetName)
+        {
+            IExcelDataReader _reader = GetExcelReader(excelPath, sheetName);
+            return _reader.AsDataSet().Tables[sheetName].Rows.Count;
+        }
+
+        public static object GetCellData(string excelPath, string sheetName, int row, int column)
+        {
+            IExcelDataReader _reader = GetExcelReader(excelPath, sheetName);
+
+            DataTable table = _reader.AsDataSet().Tables[sheetName];
             var result = table.Rows[row][column];
             return GetData(result.GetType(), result);
         }
