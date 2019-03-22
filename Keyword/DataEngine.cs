@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BddFrameworkSpecflowUdemy.Keyword
+namespace BddFrameworkSpecflowUdemy
 {
     public class DataEngine
     {
@@ -14,7 +14,7 @@ namespace BddFrameworkSpecflowUdemy.Keyword
         private readonly int _locatorValueCol;
         private readonly int _parameter;
 
-        public DataEngine(int keywordCol, int locatorTypeCol, int locatorValueCol, int parameter)
+        public DataEngine(int keywordCol=3, int locatorTypeCol=4, int locatorValueCol=5, int parameter=6)
         {
             this._keywordCol = keywordCol;
             this._locatorTypeCol = locatorTypeCol;
@@ -59,6 +59,21 @@ namespace BddFrameworkSpecflowUdemy.Keyword
                     return;
                 default:
                     throw new NoSuchKeywordFoundException("Oh no! Keyword not found... I'm sorry...");
+            }
+        }
+
+        public void ExecuteScript(string excelPath, string sheetName)
+        {
+            int totalRows = ExcelReaderHelper.GetTotalRows(excelPath, sheetName);
+
+            for (int i = 0; i < totalRows; i++)
+            {
+                var locatorType = ExcelReaderHelper.GetCellData(excelPath, sheetName, i, _locatorTypeCol).ToString();
+                var locatorValue = ExcelReaderHelper.GetCellData(excelPath, sheetName, i, _locatorValueCol).ToString();
+                var keyword = ExcelReaderHelper.GetCellData(excelPath, sheetName, i, _keywordCol).ToString();
+                var parameter = ExcelReaderHelper.GetCellData(excelPath, sheetName, i, _parameter).ToString();
+
+                PerformAction(keyword, locatorType, locatorValue, parameter);
             }
         }
     }

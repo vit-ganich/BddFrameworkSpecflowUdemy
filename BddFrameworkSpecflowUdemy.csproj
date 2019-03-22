@@ -80,6 +80,7 @@
     <Compile Include="AllTests\DropDownList\DropDownList.cs" />
     <Compile Include="AllTests\FindElements\HandleElements.cs" />
     <Compile Include="AllTests\HyperLink\TestHyperLink.cs" />
+    <Compile Include="AllTests\KeywordDrivenTest\TestKeywordDriven.cs" />
     <Compile Include="AllTests\MouseAction\MouseAction.cs" />
     <Compile Include="AllTests\MultipleBrowser\TestMultipleBrowserWindow.cs" />
     <Compile Include="AllTests\PageNavigation\TestPageNavigation.cs" />
@@ -108,8 +109,8 @@
     <Compile Include="Configuration\XmlReader.cs" />
     <Compile Include="CustomException\NoSuchKeywordFoundException.cs" />
     <Compile Include="CustomException\NoSuitableDriverFound.cs" />
-    <Compile Include="AllTests\DataDriven\Test.cs" />
-    <Compile Include="AllTests\DataDriven\TestExcelData.cs" />
+    <Compile Include="AllTests\DataDrivenTest\Test.cs" />
+    <Compile Include="AllTests\DataDrivenTest\TestExcelData.cs" />
     <Compile Include="ExcelReader\ExcelReaderHelper.cs" />
     <Compile Include="Keyword\DataEngine.cs" />
     <Compile Include="PageObject\ContactUs.cs" />
@@ -125,17 +126,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AllTests\KeywordDrivenTest\TestData\Keywords.xlsx" />
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="AllTests\DataDriven\TestData\TestTable.csv" />
-    <None Include="AllTests\DataDriven\TestData\TestTable.xlsx" />
-    <None Include="AllTests\DataDriven\TestData\TestVariosDataTypes.xlsx" />
+    <None Include="AllTests\DataDrivenTest\TestData\TestTable.csv" />
+    <None Include="AllTests\DataDrivenTest\TestData\TestTable.xlsx" />
+    <None Include="AllTests\DataDrivenTest\TestData\TestVariosDataTypes.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="AllTests\DataDriven\TestData\TestTable.xml" />
+    <Content Include="AllTests\DataDrivenTest\TestData\TestTable.xml" />
     <Content Include="packages\PhantomJS.2.1.1\tools\phantomjs\phantomjs.exe" />
   </ItemGroup>
   <Choose>
