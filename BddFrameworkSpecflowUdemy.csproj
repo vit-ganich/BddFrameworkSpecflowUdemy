@@ -106,10 +106,12 @@
     <Compile Include="ComponentHelper\TextBoxHelper.cs" />
     <Compile Include="ComponentHelper\WindowHelper.cs" />
     <Compile Include="Configuration\XmlReader.cs" />
+    <Compile Include="CustomException\NoSuchKeywordFoundException.cs" />
     <Compile Include="CustomException\NoSuitableDriverFound.cs" />
-    <Compile Include="DataDriven\Script\Test.cs" />
-    <Compile Include="DataDriven\Script\TestExcelData.cs" />
+    <Compile Include="AllTests\DataDriven\Test.cs" />
+    <Compile Include="AllTests\DataDriven\TestExcelData.cs" />
     <Compile Include="ExcelReader\ExcelReaderHelper.cs" />
+    <Compile Include="Keyword\DataEngine.cs" />
     <Compile Include="PageObject\ContactUs.cs" />
     <Compile Include="PageObject\HomePage.cs" />
     <Compile Include="PageObject\LoginPage.cs" />
@@ -126,14 +128,14 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataDriven\TestData\TestTable.csv" />
-    <None Include="DataDriven\TestData\TestTable.xlsx" />
-    <None Include="DataDriven\TestData\TestVariosDataTypes.xlsx" />
+    <None Include="AllTests\DataDriven\TestData\TestTable.csv" />
+    <None Include="AllTests\DataDriven\TestData\TestTable.xlsx" />
+    <None Include="AllTests\DataDriven\TestData\TestVariosDataTypes.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="DataDriven\TestData\TestTable.xml" />
+    <Content Include="AllTests\DataDriven\TestData\TestTable.xml" />
     <Content Include="packages\PhantomJS.2.1.1\tools\phantomjs\phantomjs.exe" />
   </ItemGroup>
   <Choose>

@@ -29,7 +29,7 @@ namespace BddFrameworkSpecflowUdemy.DataDriven.Script
 
             HomePage homePage = new HomePage(ObjectRepository.Driver);
 
-            ContactUs contactUsPage = homePage.NavigateToContactUs();
+            ContactUs contactUsPage = homePage.ClickContactUsLink();
 
             contactUsPage.ChooseSubjectHeading(TestContext.DataRow["Subject"].ToString());
             contactUsPage.EnterEmailAddress(TestContext.DataRow["EmailAddress"].ToString());
@@ -49,7 +49,7 @@ namespace BddFrameworkSpecflowUdemy.DataDriven.Script
 
             HomePage homePage = new HomePage(ObjectRepository.Driver);
 
-            ContactUs contactUsPage = homePage.NavigateToContactUs();
+            ContactUs contactUsPage = homePage.ClickContactUsLink();
 
             contactUsPage.ChooseSubjectHeading(TestContext.DataRow["Subject"].ToString());
             contactUsPage.EnterEmailAddress(TestContext.DataRow["EmailAddress"].ToString());
@@ -69,7 +69,7 @@ namespace BddFrameworkSpecflowUdemy.DataDriven.Script
 
             HomePage homePage = new HomePage(ObjectRepository.Driver);
 
-            ContactUs contactUsPage = homePage.NavigateToContactUs();
+            ContactUs contactUsPage = homePage.ClickContactUsLink();
 
             contactUsPage.ChooseSubjectHeading(TestContext.DataRow["Subject"].ToString());
             contactUsPage.EnterEmailAddress(TestContext.DataRow["EmailAddress"].ToString());
@@ -88,7 +88,7 @@ namespace BddFrameworkSpecflowUdemy.DataDriven.Script
 
             HomePage homePage = new HomePage(ObjectRepository.Driver);
 
-            ContactUs contactUsPage = homePage.NavigateToContactUs();
+            ContactUs contactUsPage = homePage.ClickContactUsLink();
 
             //contactUsPage.ChooseSubjectHeading(TestContext.DataRow["Subject"].ToString());
             //contactUsPage.EnterEmailAddress(TestContext.DataRow["EmailAddress"].ToString());

@@ -44,7 +44,7 @@ namespace BddFrameworkSpecflowUdemy
             return new LoginPage(driver);
         }
 
-        public ContactUs NavigateToContactUs()
+        public ContactUs ClickContactUsLink()
         {
             ContactUsLink.Click();
             return new ContactUs(driver);
