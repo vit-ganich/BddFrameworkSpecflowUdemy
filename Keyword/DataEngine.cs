@@ -14,7 +14,7 @@ namespace BddFrameworkSpecflowUdemy
         private readonly int _locatorValueCol;
         private readonly int _parameter;
 
-        public DataEngine(int keywordCol=3, int locatorTypeCol=4, int locatorValueCol=5, int parameter=6)
+        public DataEngine(int keywordCol = 2, int locatorTypeCol = 3, int locatorValueCol = 4, int parameter = 5)
         {
             this._keywordCol = keywordCol;
             this._locatorTypeCol = locatorTypeCol;
@@ -57,6 +57,9 @@ namespace BddFrameworkSpecflowUdemy
                 case "navigate":
                     NavigationHelper.NavigateToUrl(args[0]);
                     return;
+                case "select":
+                    DropDownHelper.SelectElement(locator, args[0]);
+                    break;
                 default:
                     throw new NoSuchKeywordFoundException("Oh no! Keyword not found... I'm sorry...");
             }
@@ -66,7 +69,7 @@ namespace BddFrameworkSpecflowUdemy
         {
             int totalRows = ExcelReaderHelper.GetTotalRows(excelPath, sheetName);
 
-            for (int i = 0; i < totalRows; i++)
+            for (int i = 1; i < totalRows; i++)
             {
                 var locatorType = ExcelReaderHelper.GetCellData(excelPath, sheetName, i, _locatorTypeCol).ToString();
                 var locatorValue = ExcelReaderHelper.GetCellData(excelPath, sheetName, i, _locatorValueCol).ToString();

@@ -14,6 +14,8 @@ namespace BddFrameworkSpecflowUdemy
         public void TestKeyword()
         {
             DataEngine keyDataEngine = new DataEngine();
+
+            keyDataEngine.ExecuteScript(@"E:\Scripts\BddFrameworkSpecflowUdemy\AllTests\KeywordDrivenTest\TestData\Keywords.xlsx", "TC01");
         }
     }
 }
