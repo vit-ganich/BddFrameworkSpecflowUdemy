@@ -89,12 +89,6 @@ namespace BddFrameworkSpecflowUdemy.DataDriven.Script
             HomePage homePage = new HomePage(ObjectRepository.Driver);
 
             ContactUs contactUsPage = homePage.ClickContactUsLink();
-
-            //contactUsPage.ChooseSubjectHeading(TestContext.DataRow["Subject"].ToString());
-            //contactUsPage.EnterEmailAddress(TestContext.DataRow["EmailAddress"].ToString());
-            //contactUsPage.EnterOrderReferense(TestContext.DataRow["OrderReference"].ToString());
-            //contactUsPage.EnterMessage(TestContext.DataRow["Message"].ToString());
-
             contactUsPage.ChooseSubjectHeading(ExcelReaderHelper.GetCellData(excelPath, sheetName, 1, 0).ToString());
             contactUsPage.EnterEmailAddress(ExcelReaderHelper.GetCellData(excelPath, sheetName, 1, 1).ToString());
             contactUsPage.EnterOrderReferense(ExcelReaderHelper.GetCellData(excelPath, sheetName, 1, 2).ToString());

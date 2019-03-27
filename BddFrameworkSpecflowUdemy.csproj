@@ -37,6 +37,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoItX3.Assembly, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a646454c8d475470, processorArchitecture=MSIL">
+      <HintPath>packages\AutoItX.Dotnet.3.3.14.5\lib\AutoItX3.Assembly.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ExcelDataReader, Version=3.5.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
       <HintPath>packages\ExcelDataReader.3.5.0\lib\net45\ExcelDataReader.dll</HintPath>
       <Private>True</Private>
@@ -78,6 +82,7 @@
     <Compile Include="AllTests\CheckBox\TestCheckBox.cs" />
     <Compile Include="AllTests\DefaultWait\HandleDefaultWait.cs" />
     <Compile Include="AllTests\DropDownList\DropDownList.cs" />
+    <Compile Include="AllTests\FileUploadTest\TestFIleUpload.cs" />
     <Compile Include="AllTests\FindElements\HandleElements.cs" />
     <Compile Include="AllTests\HyperLink\TestHyperLink.cs" />
     <Compile Include="AllTests\KeywordDrivenTest\TestKeywordDriven.cs" />
@@ -133,11 +138,14 @@
     <None Include="AllTests\DataDrivenTest\TestData\TestTable.csv" />
     <None Include="AllTests\DataDrivenTest\TestData\TestTable.xlsx" />
     <None Include="AllTests\DataDrivenTest\TestData\TestVariosDataTypes.xlsx" />
+    <None Include="AutoIT\UploadFile.au3" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="AllTests\DataDrivenTest\TestData\TestTable.xml" />
+    <Content Include="AllTests\FileUploadTest\TestData\FileToUpload.txt" />
+    <Content Include="AutoIT\UploadFile.exe" />
     <Content Include="packages\PhantomJS.2.1.1\tools\phantomjs\phantomjs.exe" />
   </ItemGroup>
   <Choose>
@@ -167,8 +175,10 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\Selenium.WebDriver.IEDriver.3.141.5\build\Selenium.WebDriver.IEDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.WebDriver.IEDriver.3.141.5\build\Selenium.WebDriver.IEDriver.targets'))" />
     <Error Condition="!Exists('packages\Selenium.WebDriver.ChromeDriver.73.0.3683.68\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.WebDriver.ChromeDriver.73.0.3683.68\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets'))" />
   </Target>
   <Import Project="packages\Selenium.WebDriver.ChromeDriver.73.0.3683.68\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('packages\Selenium.WebDriver.ChromeDriver.73.0.3683.68\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Import Project="packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets" Condition="Exists('packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
