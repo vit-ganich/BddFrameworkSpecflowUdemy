@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,6 +58,29 @@ namespace BddFrameworkSpecflowUdemy.AllTests
             }
 
             System.Threading.Thread.Sleep(1000);
+        }
+
+        [TestMethod]
+        [DeploymentItem("Resources")]
+        public void TestUploadDeploumentItem()
+        {
+            Console.WriteLine(Directory.GetCurrentDirectory());
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebSiteUrl());
+
+            LinkHelper.ClickLink(By.XPath("//*[@title='Contact Us']"));
+
+            ButtonHelper.ClickButton(By.Id("fileUpload"));
+
+            ProcessStartInfo processInfo = new ProcessStartInfo()
+            {
+                FileName = "UploadFile.exe",
+                Arguments = "FileToUpload.txt"
+            };
+
+            using (Process process = Process.Start(processInfo))
+            {
+                process.WaitForExit();
+            }
         }
     }
 }
